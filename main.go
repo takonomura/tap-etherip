@@ -57,7 +57,7 @@ func main() {
 				continue
 			}
 			if ip, ok := addr.(*net.IPAddr); !ok || !ip.IP.Equal(remote.IP) {
-				log.Panicf("unknown remote: %q", addr.String())
+				log.Printf("unknown remote: %q", addr.String())
 				continue
 			}
 			n, err = tap.Write(buf[2 : n+2])
