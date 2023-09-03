@@ -60,7 +60,7 @@ func main() {
 				log.Printf("unknown remote: %q", addr.String())
 				continue
 			}
-			n, err = tap.Write(buf[2 : n+2])
+			n, err = tap.Write(buf[2:n])
 			if err != nil {
 				return fmt.Errorf("writing to tap: %w", err)
 			}
